@@ -41,7 +41,7 @@ function check_valid_user() {
       .stripslashes($_SESSION['valid_user']).'.';
     echo "<br />";
   } else {
-    // Пользователь не вошел в систему
+   
     do_html_heading("Проблема:");
     echo "Вы не вошли в систему.<br />";
     do_html_url('login.php', 'Вход');
@@ -116,10 +116,10 @@ function notify_password($username, $password) {
     $row = $result->fetch_object();
     $email = $row->email;
     $from = "From: support@phpbookmark \r\n";
-    $mesg = "Ваш пароль для входа в систему PHPBookmark изменен на $password \r\n"
+    $mesg = "Ваш пароль для входа в систему изменен на $password \r\n"
             ."Пожалуйста, учтите это при будущем входе в систему. \r\n";
           
-    if (mail($email, 'Информация о входе в систему PHPBookmark', $mesg, $from))
+    if (mail($email, 'Информация о входе в систему', $mesg, $from))
       return true;      
     else
       throw new Exception('Не удается отправить электронную почту.'); 

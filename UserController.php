@@ -9,7 +9,7 @@ class UserController extends Controller
 	{
 		return array(
 			'accessControl', 
-			// 'postOnly + delete',
+		
 		);
 	}
 
@@ -20,11 +20,11 @@ class UserController extends Controller
 	
 			return array(
 				
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+			array('allow',  
 				'actions'=>array('view', 'index', 'password', 'update', 'delete'),
 				'roles'=>array('2'),
 			),
-			array('deny',  // deny all users
+			array('deny',  
 				'users'=>array('*'),
 			),
 		);
@@ -78,7 +78,7 @@ class UserController extends Controller
 	{
 		$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+	
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}

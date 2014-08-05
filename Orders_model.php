@@ -24,8 +24,7 @@ class Orders extends CActiveRecord
 			array('created', 'numerical', 'integerOnly'=>true),
 			array('total_price', 'numerical'),
 			array('customer_id', 'length', 'max'=>11),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
+			
 			array('id, customer_id, total_price, created', 'safe', 'on'=>'search'),
 		);
 	}
@@ -53,7 +52,7 @@ class Orders extends CActiveRecord
 
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+
 
 		$criteria=new CDbCriteria;
 

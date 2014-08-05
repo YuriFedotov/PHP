@@ -3,7 +3,7 @@
 
 class Orders extends CActiveRecord
 {
-	public $title; // создали атрибуты которых нетв это модели
+	public $title;
         public $color;
         public $size;
         public $price;

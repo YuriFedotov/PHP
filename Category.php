@@ -16,8 +16,6 @@ public function rules()
                         array('title, position', 'required'),
 			array('title', 'length', 'max'=>255),
 			array('position', 'length', 'max'=>8),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
 			array('id, title, position', 'safe', 'on'=>'search'),
 		);
 	}
@@ -25,8 +23,7 @@ public function rules()
 
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
+	
 		return array(
 		);
 	}

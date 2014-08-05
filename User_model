@@ -16,9 +16,7 @@ class User extends CActiveRecord
 		return '{{user}}';
 	}
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
+
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -35,9 +33,7 @@ class User extends CActiveRecord
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
+
 	public function relations()
 	{
 		
@@ -45,9 +41,7 @@ class User extends CActiveRecord
 		);
 	}
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
+
 	public function attributeLabels()
 	{
 		return array(

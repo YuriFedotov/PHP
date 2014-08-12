@@ -78,7 +78,7 @@ if(!empty($URL) && !empty($tag_in) && !empty($tag_out) && !empty($page)){
    }
    fclose($fp2);
    $isprav_amp = str_replace("&amp;","&", substr($link[0][$i], 5, -7)); 
-   fwrite($fp, substr($title[0][$i],6, -8)."::".$isprav_amp."::".substr($description[0][$i],12, -14)."::\r\n"); */
+   fwrite($fp, substr($title[0][$i],6, -8)."::".$isprav_amp."::".substr($description[0][$i],12, -14)."::\r\n");
 }
    fclose($fp);
     

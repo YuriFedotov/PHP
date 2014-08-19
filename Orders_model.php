@@ -74,19 +74,16 @@ class Orders extends CActiveRecord
 	}
         
         
-        public static function getDetals($id)
+      public static function getDetals($id)
 	{
 		
             $model = Orders::model()->findAllBySql(
-            "SELECT cms_product.id, title, color, size, price,
-            COUNT(cms_orders_items.quantity) AS quantity
-            FROM cms_product
-            JOIN cms_orders_items ON cms_product.id = cms_orders_items.product_id
-            WHERE cms_orders_items.orders_id = '$id'
-            GROUP BY cms_product.id
-            ORDER BY cms_product.price DESC"
-                    );
-            
+            "SELECT p.id, title, color, size, price, oi.quantity AS quantity
+            FROM cms_product p
+            JOIN cms_orders_items oi ON p.id = oi.product_id
+            WHERE oi.orders_id =  '$id'
+            ORDER BY p.price DESC "
+            );
             return $model;
 	}
               
